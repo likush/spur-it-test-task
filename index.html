@@ -1,0 +1,39 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="components/player/player.css">
+</head>
+
+<body>
+<main class="main">
+    <div class="content">
+        <div class="rectangle"></div>
+        <h1 class="content__title">
+            Digestion is&ensp;
+            <span class="title__highlight"> the key&ensp;</span>
+            to overall wellness of Body, Mind and Spirit
+        </h1>
+
+        <button class="play-btn"></button>
+    </div>
+
+    <div class="player" tabindex="5"></div>
+
+    <script type="module">
+      import Player from './components/player/player.js';
+
+      const player = new Player('EZqYjslP07E', '.player', '.play-btn');
+      player.init();
+    </script>
+</main>
+</body>
+
+</html>

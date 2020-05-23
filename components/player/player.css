@@ -1,0 +1,16 @@
+.player_visible {
+    display: flex;
+}
+
+.player__close-btn {
+    padding: 10px;
+    border: none;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.player__close-btn:focus {
+    outline: none;
+}

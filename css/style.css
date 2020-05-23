@@ -1,0 +1,95 @@
+@font-face {
+    font-family: "Quentin";
+    src: url("../fonts/Quentin.otf");
+}
+
+@font-face {
+    font-family: "TiemposFine";
+    src: url("../fonts/TiemposFine-Bold.otf");
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    min-height: 700px;
+    background-image: url("../img/390e92a7bbb1547c42a83c636107a265.png");
+    background-size: cover;
+    position: relative;
+}
+
+.content {
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rectangle {
+    width: 100px;
+    height: 9px;
+    background-color: #FFDF37;
+}
+
+.content__title {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-family: TiemposFine, serif;
+    width: 800px;
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    line-height: 64px;
+}
+
+.title__highlight {
+    font-family: Quentin, serif;
+    font-weight: 400;
+}
+
+.play-btn {
+    width: 48px;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    background-image: url("../svg/play.svg");
+    background-size: cover;
+    background-color: transparent;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: 0.3s ease all;
+}
+
+.play-btn:hover {
+    opacity: 1;
+}
+
+.play-btn:focus {
+    outline: none;
+}
+
+.player {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100vh;
+}
+
+
+@media (max-width: 1024px) {
+    .content__title {
+        width: 700px;
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content__title {
+        width: 85%;
+        font-size: 35px;
+    }
+}
