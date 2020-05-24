@@ -6,9 +6,13 @@ class Player {
   }
 
   playerTemplate = `
-    <button class="player__close-btn">✕</button>
-    <div class="player__content"></div>
+    <div class="player__inner">
+        <button class="player__close-btn">✕</button>
+        <div class="player__content"></div>
+    </div>
   `;
+
+  focusableSelector = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
 
   init() {
     this.playBtn = document.querySelector(this.buttonSelector);
@@ -32,6 +36,7 @@ class Player {
 
   showPlayer = () => {
     this.playerEl.classList.add("player_visible");
+    this.addTabIndex();
   };
 
   hidePlayer = () => {
@@ -41,13 +46,30 @@ class Player {
   onBtnClickHandler = ev => {
     if (ev.target.classList.contains('player__close-btn')) {
       this.hidePlayer();
+      this.removeTabIndex();
     }
   };
 
   onEscUpHandler = ev => {
     if (ev.key === 'Escape') {
       this.hidePlayer();
+      this.removeTabIndex();
     }
+  };
+
+  addTabIndex = () => {
+    const focusableEls = document.querySelectorAll(this.focusableSelector);
+    this.tabIndexBackup = new Map();
+    focusableEls.forEach(el => {
+      if (!el.closest(this.playerSelector)) {
+        this.tabIndexBackup.set(el, el.tabIndex);
+        el.tabIndex = -1;
+      }
+    });
+  };
+
+  removeTabIndex = () => {
+    this.tabIndexBackup.forEach((backupValue, el) => el.tabIndex = backupValue);
   };
 
   destroy() {

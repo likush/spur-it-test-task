@@ -2,7 +2,15 @@
     display: flex;
 }
 
+.player__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: auto;
+}
+
 .player__close-btn {
+    width: max-content;
     padding: 10px;
     border: none;
     color: white;
@@ -11,6 +19,13 @@
     font-weight: bold;
 }
 
-.player__close-btn:focus {
-    outline: none;
+@media (max-width: 768px) {
+    .player__inner {
+        width: 80%;
+    }
+
+    .player__content {
+        width: 100%;
+    }
 }
+

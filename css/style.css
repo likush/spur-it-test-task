@@ -13,7 +13,6 @@
     justify-content: center;
     width: 100%;
     height: 100vh;
-    min-height: 700px;
     background-image: url("../img/390e92a7bbb1547c42a83c636107a265.png");
     background-size: cover;
     position: relative;
@@ -57,26 +56,22 @@
     background-image: url("../svg/play.svg");
     background-size: cover;
     background-color: transparent;
-    opacity: 0.8;
     cursor: pointer;
     transition: 0.3s ease all;
 }
 
 .play-btn:hover {
-    opacity: 1;
-}
-
-.play-btn:focus {
-    outline: none;
+    transform: scale(1.2);
 }
 
 .player {
-    position: absolute;
     display: none;
-    flex-direction: column;
+    position: absolute;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 
@@ -89,7 +84,8 @@
 
 @media (max-width: 768px) {
     .content__title {
-        width: 85%;
+        width: 90%;
         font-size: 35px;
+        line-height: 40px;
     }
 }
